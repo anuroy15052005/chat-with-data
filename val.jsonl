@@ -1,0 +1,241 @@
+{"question": "What is the revenue from Clothing in Ahmedabad", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Ahmedabad' AND category = 'Clothing';"}
+{"question": "i want to know electronics sales in Mumbai", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Mumbai' AND category = 'Electronics';"}
+{"question": "please tell me groceries sales in lucknow", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Lucknow' AND category = 'Groceries';"}
+{"question": "please tell me how much Books did Chandigarh buy in rupees?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chandigarh' AND category = 'Books';"}
+{"question": "groceries sales in ahmedabad", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Ahmedabad' AND category = 'Groceries';"}
+{"question": "which city has the highest revenue", "sql": "SELECT customer_city, SUM(total_inr) AS revenue FROM sales GROUP BY customer_city ORDER BY revenue DESC LIMIT 1;"}
+{"question": "can you show how many units of Smartphone were sold?", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Smartphone';"}
+{"question": "please tell me how many credit card orders do we have?", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'Credit Card';"}
+{"question": "What is the total revenue from Pune", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Pune';"}
+{"question": "please tell me how many UPI orders do we have", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'UPI';"}
+{"question": "i want to know what is the total revenue from Chennai", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chennai';"}
+{"question": "i want to know total quantity sold for bedsheet set", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Bedsheet Set';"}
+{"question": "i want to know electronics sales in Kanpur", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kanpur' AND category = 'Electronics';"}
+{"question": "can you show how much did we earn in Chandigarh", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chandigarh';"}
+{"question": "i want to know show the 10 products that earned the most", "sql": "SELECT product, SUM(total_inr) AS revenue FROM sales GROUP BY product ORDER BY revenue DESC LIMIT 10;"}
+{"question": "can you show how many orders were placed in November 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-11';"}
+{"question": "what is the revenue from electronics in bengaluru", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Bengaluru' AND category = 'Electronics';"}
+{"question": "can you show what was the revenue from Books in 2025", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Books' AND strftime('%Y', order_date) = '2025';"}
+{"question": "can you show count orders for november 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-11';"}
+{"question": "please tell me what was the revenue from Groceries in 2024?", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Groceries' AND strftime('%Y', order_date) = '2024';"}
+{"question": "how many units of smartphone were sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Smartphone';"}
+{"question": "i want to know what is the revenue from clothing in kanpur?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kanpur' AND category = 'Clothing';"}
+{"question": "i want to know total quantity sold for Basmati Rice 5kg", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Basmati Rice 5kg';"}
+{"question": "can you show number of orders in November 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-11';"}
+{"question": "please tell me what was the revenue from Clothing in 2024?", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Clothing' AND strftime('%Y', order_date) = '2024';"}
+{"question": "i want to know show the 3 products that earned the most", "sql": "SELECT product, SUM(total_inr) AS revenue FROM sales GROUP BY product ORDER BY revenue DESC LIMIT 3;"}
+{"question": "How much Books did Pune buy in rupees?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Pune' AND category = 'Books';"}
+{"question": "What is the revenue from Books in Ahmedabad?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Ahmedabad' AND category = 'Books';"}
+{"question": "please tell me total sales amount", "sql": "SELECT SUM(total_inr) FROM sales;"}
+{"question": "i want to know total Electronics revenue for Chennai", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chennai' AND category = 'Electronics';"}
+{"question": "Total Electronics revenue for Lucknow", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Lucknow' AND category = 'Electronics';"}
+{"question": "can you show how much did we earn in Lucknow", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Lucknow';"}
+{"question": "please tell me clothing sales for 2024", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Clothing' AND strftime('%Y', order_date) = '2024';"}
+{"question": "please tell me books sales in Jaipur", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Jaipur' AND category = 'Books';"}
+{"question": "What is the revenue from Home & Kitchen in Jaipur?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Jaipur' AND category = 'Home & Kitchen';"}
+{"question": "please tell me revenue for Pune", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Pune';"}
+{"question": "please tell me what is the total revenue from Jaipur", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Jaipur';"}
+{"question": "number of orders in april 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-04';"}
+{"question": "can you show what is the revenue from Clothing in Mumbai?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Mumbai' AND category = 'Clothing';"}
+{"question": "please tell me how much Electronics did Kolkata buy in rupees", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kolkata' AND category = 'Electronics';"}
+{"question": "how many orders were placed in april 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-04';"}
+{"question": "please tell me total Books revenue for Chennai", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chennai' AND category = 'Books';"}
+{"question": "What is the revenue from Groceries in Kanpur?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kanpur' AND category = 'Groceries';"}
+{"question": "how many orders had a discount of more than 10%", "sql": "SELECT COUNT(*) FROM sales WHERE discount_pct > 10;"}
+{"question": "i want to know what is the total revenue from kolkata?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kolkata';"}
+{"question": "Total sales in Delhi", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Delhi';"}
+{"question": "i want to know what was the revenue from Electronics in 2025?", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Electronics' AND strftime('%Y', order_date) = '2025';"}
+{"question": "what is the revenue from groceries in chandigarh", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chandigarh' AND category = 'Groceries';"}
+{"question": "please tell me how much Clothing did Pune buy in rupees?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Pune' AND category = 'Clothing';"}
+{"question": "can you show how many orders were placed in February 2024?", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-02';"}
+{"question": "please tell me how much did customers in ahmedabad spend?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Ahmedabad';"}
+{"question": "please tell me monthly revenue in 2025", "sql": "SELECT strftime('%Y-%m', order_date) AS month, SUM(total_inr) AS revenue FROM sales WHERE strftime('%Y', order_date) = '2025' GROUP BY month ORDER BY month;"}
+{"question": "What is the revenue from Groceries in Hyderabad?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Hyderabad' AND category = 'Groceries';"}
+{"question": "can you show how much electronics did jaipur buy in rupees", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Jaipur' AND category = 'Electronics';"}
+{"question": "i want to know what is the revenue from Home & Kitchen in Lucknow?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Lucknow' AND category = 'Home & Kitchen';"}
+{"question": "please tell me number of Headphones units sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Headphones';"}
+{"question": "please tell me what is the average order amount in each city?", "sql": "SELECT customer_city, AVG(total_inr) AS avg_order_value FROM sales GROUP BY customer_city ORDER BY avg_order_value DESC;"}
+{"question": "i want to know number of Smartphone units sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Smartphone';"}
+{"question": "can you show what is the revenue from Home & Kitchen in Lucknow?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Lucknow' AND category = 'Home & Kitchen';"}
+{"question": "i want to know average discount by category", "sql": "SELECT category, AVG(discount_pct) AS avg_discount FROM sales GROUP BY category;"}
+{"question": "please tell me how many units of Water Bottle were sold?", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Water Bottle';"}
+{"question": "what is the total revenue", "sql": "SELECT SUM(total_inr) FROM sales;"}
+{"question": "please tell me home & Kitchen sales in Chennai", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chennai' AND category = 'Home & Kitchen';"}
+{"question": "can you show groceries sales in Delhi", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Delhi' AND category = 'Groceries';"}
+{"question": "please tell me number of Mixer Grinder units sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Mixer Grinder';"}
+{"question": "can you show how many units of notebook pack were sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Notebook Pack';"}
+{"question": "i want to know how many orders were paid via cash on delivery?", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'Cash on Delivery';"}
+{"question": "Total quantity sold for Cooking Oil 5L", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Cooking Oil 5L';"}
+{"question": "electronics sales in delhi", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Delhi' AND category = 'Electronics';"}
+{"question": "i want to know revenue for pune", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Pune';"}
+{"question": "how many units of basmati rice 5kg were sold?", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Basmati Rice 5kg';"}
+{"question": "how many units of power bank were sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Power Bank';"}
+{"question": "how many orders were placed in december 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-12';"}
+{"question": "can you show what was the revenue from Clothing in 2025?", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Clothing' AND strftime('%Y', order_date) = '2025';"}
+{"question": "how many orders were placed in september 2025?", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-09';"}
+{"question": "can you show how many orders had a discount of more than 10%", "sql": "SELECT COUNT(*) FROM sales WHERE discount_pct > 10;"}
+{"question": "i want to know where do we make the most money?", "sql": "SELECT customer_city, SUM(total_inr) AS revenue FROM sales GROUP BY customer_city ORDER BY revenue DESC LIMIT 1;"}
+{"question": "Count orders for October 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-10';"}
+{"question": "can you show clothing sales in Kolkata", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kolkata' AND category = 'Clothing';"}
+{"question": "please tell me how much did Books earn in 2025?", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Books' AND strftime('%Y', order_date) = '2025';"}
+{"question": "Total Groceries revenue in 2025", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Groceries' AND strftime('%Y', order_date) = '2025';"}
+{"question": "please tell me what is the total revenue from Ahmedabad?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Ahmedabad';"}
+{"question": "i want to know number of orders in february 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-02';"}
+{"question": "can you show how much did we earn in Chennai?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chennai';"}
+{"question": "How much Home & Kitchen did Ahmedabad buy in rupees", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Ahmedabad' AND category = 'Home & Kitchen';"}
+{"question": "i want to know how much did Books earn in 2025?", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Books' AND strftime('%Y', order_date) = '2025';"}
+{"question": "can you show total quantity sold for Bedsheet Set", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Bedsheet Set';"}
+{"question": "How much Clothing did Hyderabad buy in rupees", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Hyderabad' AND category = 'Clothing';"}
+{"question": "please tell me how many orders were placed in june 2024?", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-06';"}
+{"question": "what is the total revenue from hyderabad?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Hyderabad';"}
+{"question": "can you show how many UPI orders do we have?", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'UPI';"}
+{"question": "i want to know home & kitchen sales in chennai", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chennai' AND category = 'Home & Kitchen';"}
+{"question": "please tell me groceries sales in Jaipur", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Jaipur' AND category = 'Groceries';"}
+{"question": "i want to know how many orders were placed in March 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-03';"}
+{"question": "i want to know revenue for Chennai", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chennai';"}
+{"question": "Number of orders in November 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-11';"}
+{"question": "please tell me how much did customers in mumbai spend?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Mumbai';"}
+{"question": "can you show number of orders in August 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-08';"}
+{"question": "How much Groceries did Bengaluru buy in rupees?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Bengaluru' AND category = 'Groceries';"}
+{"question": "i want to know how many units of saree were sold?", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Saree';"}
+{"question": "What are our overall sales", "sql": "SELECT SUM(total_inr) FROM sales;"}
+{"question": "What was the revenue from Books in 2024", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Books' AND strftime('%Y', order_date) = '2024';"}
+{"question": "Revenue for Chandigarh", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chandigarh';"}
+{"question": "i want to know what is the total revenue from Delhi", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Delhi';"}
+{"question": "can you show best month by revenue", "sql": "SELECT strftime('%Y-%m', order_date) AS month, SUM(total_inr) AS revenue FROM sales GROUP BY month ORDER BY revenue DESC LIMIT 1;"}
+{"question": "please tell me groceries sales for 2025", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Groceries' AND strftime('%Y', order_date) = '2025';"}
+{"question": "What is the revenue from Electronics in Mumbai?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Mumbai' AND category = 'Electronics';"}
+{"question": "i want to know how much did we earn in bengaluru?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Bengaluru';"}
+{"question": "can you show how much did Clothing earn in 2024", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Clothing' AND strftime('%Y', order_date) = '2024';"}
+{"question": "What is the revenue from Books in Delhi", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Delhi' AND category = 'Books';"}
+{"question": "please tell me how many orders were placed in May 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-05';"}
+{"question": "please tell me number of orders in november 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-11';"}
+{"question": "can you show how much Groceries did Pune buy in rupees?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Pune' AND category = 'Groceries';"}
+{"question": "How much did Home & Kitchen earn in 2024", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Home & Kitchen' AND strftime('%Y', order_date) = '2024';"}
+{"question": "what is the total revenue from pune?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Pune';"}
+{"question": "i want to know total Home & Kitchen revenue in 2025", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Home & Kitchen' AND strftime('%Y', order_date) = '2025';"}
+{"question": "Total Home & Kitchen revenue for Kolkata", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kolkata' AND category = 'Home & Kitchen';"}
+{"question": "How many orders were placed in August 2025?", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-08';"}
+{"question": "How much Clothing did Bengaluru buy in rupees", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Bengaluru' AND category = 'Clothing';"}
+{"question": "can you show revenue by category", "sql": "SELECT category, SUM(total_inr) AS revenue FROM sales GROUP BY category ORDER BY revenue DESC;"}
+{"question": "i want to know how many Debit Card orders do we have?", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'Debit Card';"}
+{"question": "can you show number of upi orders", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'UPI';"}
+{"question": "i want to know what was the revenue from Clothing in 2025", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Clothing' AND strftime('%Y', order_date) = '2025';"}
+{"question": "can you show what is the revenue from Home & Kitchen in Hyderabad", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Hyderabad' AND category = 'Home & Kitchen';"}
+{"question": "can you show total Clothing revenue for Mumbai", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Mumbai' AND category = 'Clothing';"}
+{"question": "please tell me total Books revenue for Chandigarh", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chandigarh' AND category = 'Books';"}
+{"question": "can you show what was the revenue from Clothing in 2024", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Clothing' AND strftime('%Y', order_date) = '2024';"}
+{"question": "please tell me total Electronics revenue for Ahmedabad", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Ahmedabad' AND category = 'Electronics';"}
+{"question": "i want to know how much did Home & Kitchen earn in 2025?", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Home & Kitchen' AND strftime('%Y', order_date) = '2025';"}
+{"question": "can you show total Electronics revenue for Kanpur", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kanpur' AND category = 'Electronics';"}
+{"question": "i want to know number of orders in June 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-06';"}
+{"question": "can you show how much did Groceries earn in 2025?", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Groceries' AND strftime('%Y', order_date) = '2025';"}
+{"question": "please tell me what is the total revenue from lucknow?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Lucknow';"}
+{"question": "i want to know count orders with payment mode debit card", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'Debit Card';"}
+{"question": "can you show what are our overall sales", "sql": "SELECT SUM(total_inr) FROM sales;"}
+{"question": "list the 10 highest earning products", "sql": "SELECT product, SUM(total_inr) AS revenue FROM sales GROUP BY product ORDER BY revenue DESC LIMIT 10;"}
+{"question": "number of exam guide units sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Exam Guide';"}
+{"question": "How many orders were placed in November 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-11';"}
+{"question": "can you show what is the total revenue from Chennai?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chennai';"}
+{"question": "i want to know total Electronics revenue for Mumbai", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Mumbai' AND category = 'Electronics';"}
+{"question": "How much Groceries did Ahmedabad buy in rupees?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Ahmedabad' AND category = 'Groceries';"}
+{"question": "can you show count orders for august 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-08';"}
+{"question": "please tell me how much groceries did kolkata buy in rupees?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kolkata' AND category = 'Groceries';"}
+{"question": "can you show how many units of Jeans were sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Jeans';"}
+{"question": "please tell me what is the revenue from clothing in pune?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Pune' AND category = 'Clothing';"}
+{"question": "i want to know how much Electronics did Hyderabad buy in rupees", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Hyderabad' AND category = 'Electronics';"}
+{"question": "i want to know books sales in Lucknow", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Lucknow' AND category = 'Books';"}
+{"question": "can you show count orders for June 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-06';"}
+{"question": "can you show total quantity sold for notebook pack", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Notebook Pack';"}
+{"question": "How many orders were placed in April 2024?", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-04';"}
+{"question": "Show the 3 products that earned the most", "sql": "SELECT product, SUM(total_inr) AS revenue FROM sales GROUP BY product ORDER BY revenue DESC LIMIT 3;"}
+{"question": "please tell me total sales in Bengaluru", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Bengaluru';"}
+{"question": "i want to know how many units of cooking oil 5l were sold?", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Cooking Oil 5L';"}
+{"question": "i want to know how many orders were placed in october 2025?", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-10';"}
+{"question": "How much did customers in Pune spend?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Pune';"}
+{"question": "i want to know how much did customers in Kolkata spend?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kolkata';"}
+{"question": "What is the revenue from Home & Kitchen in Bengaluru?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Bengaluru' AND category = 'Home & Kitchen';"}
+{"question": "Clothing sales in Pune", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Pune' AND category = 'Clothing';"}
+{"question": "What is the revenue from Groceries in Kolkata?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kolkata' AND category = 'Groceries';"}
+{"question": "Number of orders in April 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-04';"}
+{"question": "How much Groceries did Hyderabad buy in rupees", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Hyderabad' AND category = 'Groceries';"}
+{"question": "what is the total revenue from kolkata", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kolkata';"}
+{"question": "can you show how many units of power bank were sold?", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Power Bank';"}
+{"question": "What is the revenue from Home & Kitchen in Ahmedabad", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Ahmedabad' AND category = 'Home & Kitchen';"}
+{"question": "i want to know what is the revenue from Books in Delhi?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Delhi' AND category = 'Books';"}
+{"question": "How many UPI orders do we have", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'UPI';"}
+{"question": "can you show how many Cash on Delivery orders do we have?", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'Cash on Delivery';"}
+{"question": "What is the revenue from Clothing in Jaipur?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Jaipur' AND category = 'Clothing';"}
+{"question": "Total Home & Kitchen revenue for Hyderabad", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Hyderabad' AND category = 'Home & Kitchen';"}
+{"question": "please tell me number of orders in march 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-03';"}
+{"question": "i want to know groceries sales in kanpur", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kanpur' AND category = 'Groceries';"}
+{"question": "please tell me how much did we earn in hyderabad?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Hyderabad';"}
+{"question": "can you show revenue for Kanpur", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kanpur';"}
+{"question": "please tell me number of pressure cooker units sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Pressure Cooker';"}
+{"question": "please tell me which month had the highest sales?", "sql": "SELECT strftime('%Y-%m', order_date) AS month, SUM(total_inr) AS revenue FROM sales GROUP BY month ORDER BY revenue DESC LIMIT 1;"}
+{"question": "please tell me how much Electronics did Chandigarh buy in rupees?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chandigarh' AND category = 'Electronics';"}
+{"question": "i want to know what is the average order amount in each city", "sql": "SELECT customer_city, AVG(total_inr) AS avg_order_value FROM sales GROUP BY customer_city ORDER BY avg_order_value DESC;"}
+{"question": "can you show what is the revenue from books in lucknow?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Lucknow' AND category = 'Books';"}
+{"question": "please tell me count orders for june 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-06';"}
+{"question": "please tell me total Electronics revenue in 2024", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Electronics' AND strftime('%Y', order_date) = '2024';"}
+{"question": "How many units of Exam Guide were sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Exam Guide';"}
+{"question": "please tell me how much did we earn in jaipur?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Jaipur';"}
+{"question": "total sales in kanpur", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kanpur';"}
+{"question": "can you show how much did Home & Kitchen earn in 2024?", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Home & Kitchen' AND strftime('%Y', order_date) = '2024';"}
+{"question": "i want to know how much did each category earn", "sql": "SELECT category, SUM(total_inr) AS revenue FROM sales GROUP BY category ORDER BY revenue DESC;"}
+{"question": "i want to know how many orders were placed in July 2025?", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-07';"}
+{"question": "i want to know count orders for November 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-11';"}
+{"question": "please tell me count orders for January 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-01';"}
+{"question": "i want to know how many orders had a discount of more than 15%?", "sql": "SELECT COUNT(*) FROM sales WHERE discount_pct > 15;"}
+{"question": "how many units of exam guide were sold?", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Exam Guide';"}
+{"question": "How much did Groceries earn in 2025?", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Groceries' AND strftime('%Y', order_date) = '2025';"}
+{"question": "please tell me what was the revenue from Home & Kitchen in 2025?", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Home & Kitchen' AND strftime('%Y', order_date) = '2025';"}
+{"question": "i want to know how much did we earn in Mumbai", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Mumbai';"}
+{"question": "can you show total Books revenue for Hyderabad", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Hyderabad' AND category = 'Books';"}
+{"question": "i want to know number of Kurta units sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Kurta';"}
+{"question": "clothing sales in jaipur", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Jaipur' AND category = 'Clothing';"}
+{"question": "can you show number of orders in september 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-09';"}
+{"question": "i want to know how many units of Jeans were sold?", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Jeans';"}
+{"question": "can you show how much electronics did lucknow buy in rupees?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Lucknow' AND category = 'Electronics';"}
+{"question": "can you show how many orders were placed in September 2025?", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-09';"}
+{"question": "How much did we earn in Kanpur?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kanpur';"}
+{"question": "How much Clothing did Ahmedabad buy in rupees", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Ahmedabad' AND category = 'Clothing';"}
+{"question": "i want to know total Groceries revenue for Lucknow", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Lucknow' AND category = 'Groceries';"}
+{"question": "i want to know how many orders were placed in january 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-01';"}
+{"question": "can you show total Clothing revenue for Pune", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Pune' AND category = 'Clothing';"}
+{"question": "i want to know how many orders were placed in March 2024?", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-03';"}
+{"question": "please tell me electronics sales in Kolkata", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kolkata' AND category = 'Electronics';"}
+{"question": "Groceries sales in Mumbai", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Mumbai' AND category = 'Groceries';"}
+{"question": "i want to know total electronics revenue for hyderabad", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Hyderabad' AND category = 'Electronics';"}
+{"question": "i want to know number of orders in August 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-08';"}
+{"question": "revenue for hyderabad", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Hyderabad';"}
+{"question": "please tell me count orders for April 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-04';"}
+{"question": "please tell me number of Cooking Oil 5L units sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Cooking Oil 5L';"}
+{"question": "please tell me how much did Books earn in 2024", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Books' AND strftime('%Y', order_date) = '2024';"}
+{"question": "please tell me number of orders in january 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-01';"}
+{"question": "number of water bottle units sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Water Bottle';"}
+{"question": "please tell me count orders with payment mode credit card", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'Credit Card';"}
+{"question": "Count orders for December 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-12';"}
+{"question": "i want to know how many orders were paid via Net Banking", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'Net Banking';"}
+{"question": "i want to know how many units of headphones were sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Headphones';"}
+{"question": "please tell me what was the revenue from Books in 2025", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Books' AND strftime('%Y', order_date) = '2025';"}
+{"question": "What is the revenue from Electronics in Kanpur?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kanpur' AND category = 'Electronics';"}
+{"question": "please tell me how many orders were placed in February 2025?", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-02';"}
+{"question": "What is the revenue from Home & Kitchen in Kolkata", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kolkata' AND category = 'Home & Kitchen';"}
+{"question": "please tell me what is the revenue from Clothing in Kolkata?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Kolkata' AND category = 'Clothing';"}
+{"question": "can you show how many orders were paid via Debit Card?", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'Debit Card';"}
+{"question": "please tell me what is the total revenue from Delhi", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Delhi';"}
+{"question": "How many orders were placed in October 2024?", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-10';"}
+{"question": "please tell me total Clothing revenue for Mumbai", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Mumbai' AND category = 'Clothing';"}
+{"question": "i want to know how much did Groceries earn in 2024", "sql": "SELECT SUM(total_inr) FROM sales WHERE category = 'Groceries' AND strftime('%Y', order_date) = '2024';"}
+{"question": "i want to know total quantity sold for Pressure Cooker", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Pressure Cooker';"}
+{"question": "Books sales in Chandigarh", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Chandigarh' AND category = 'Books';"}
+{"question": "i want to know what is the revenue from electronics in mumbai?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Mumbai' AND category = 'Electronics';"}
+{"question": "can you show how many orders were placed in july 2024", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2024-07';"}
+{"question": "i want to know number of Cash on Delivery orders", "sql": "SELECT COUNT(*) FROM sales WHERE payment_mode = 'Cash on Delivery';"}
+{"question": "can you show how many orders were placed in June 2025", "sql": "SELECT COUNT(*) FROM sales WHERE strftime('%Y-%m', order_date) = '2025-06';"}
+{"question": "in which month did we earn the most", "sql": "SELECT strftime('%Y-%m', order_date) AS month, SUM(total_inr) AS revenue FROM sales GROUP BY month ORDER BY revenue DESC LIMIT 1;"}
+{"question": "i want to know what is the total revenue from Mumbai?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Mumbai';"}
+{"question": "can you show what is the revenue from Electronics in Hyderabad?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Hyderabad' AND category = 'Electronics';"}
+{"question": "can you show what is the revenue from Groceries in Jaipur?", "sql": "SELECT SUM(total_inr) FROM sales WHERE customer_city = 'Jaipur' AND category = 'Groceries';"}
+{"question": "can you show number of Dry Fruits Box units sold", "sql": "SELECT SUM(quantity) FROM sales WHERE product = 'Dry Fruits Box';"}
