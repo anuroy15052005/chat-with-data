@@ -1,0 +1,5 @@
+sales(order_id INTEGER, order_date TEXT 'YYYY-MM-DD', customer_city TEXT, category TEXT, product TEXT, quantity INTEGER, unit_price_inr INTEGER, discount_pct INTEGER, payment_mode TEXT, total_inr REAL)
+customer_city: Ahmedabad, Bengaluru, Chandigarh, Chennai, Delhi, Hyderabad, Jaipur, Kanpur, Kolkata, Lucknow, Mumbai, Pune
+category -> products: Books: Exam Guide, Notebook Pack, Novel; Clothing: Jeans, Kurta, Saree, T-Shirt; Electronics: Headphones, Power Bank, Smartphone, Smartwatch; Groceries: Basmati Rice 5kg, Cooking Oil 5L, Dry Fruits Box, Tea Pack; Home & Kitchen: Bedsheet Set, Mixer Grinder, Pressure Cooker, Water Bottle
+payment_mode: Cash on Delivery, Credit Card, Debit Card, Net Banking, UPI
+order_date: 2024-01-01 to 2025-12-31. total_inr is revenue in INR.
