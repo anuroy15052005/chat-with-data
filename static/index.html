@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Chat with Data</title>
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<main class="shell">
+		<nav class="topbar" aria-label="Primary navigation">
+			<a class="brand" href="/" aria-label="Chat with Data home">
+				<span class="brand-mark" aria-hidden="true">C</span>
+				<span>Chat with Data</span>
+			</a>
+			<span class="live-pill"><span class="live-dot" aria-hidden="true"></span>Live workspace</span>
+		</nav>
+
+		<header class="hero">
+			<div class="hero-copy">
+				<p class="eyebrow">Sales intelligence</p>
+				<h1>Ask your data<span class="accent-dot">.</span></h1>
+				<p class="subtitle">Turn everyday questions into clear answers from your sales data. No spreadsheets, filters, or SQL required.</p>
+			</div>
+			<div class="hero-orbit" aria-hidden="true">
+				<span class="orbit-ring ring-one"></span>
+				<span class="orbit-ring ring-two"></span>
+				<span class="orbit-core">01</span>
+			</div>
+		</header>
+
+		<section class="panel" aria-labelledby="question-title">
+			<div class="panel-heading">
+				<div>
+					<p class="eyebrow">Natural language query</p>
+					<h2 id="question-title">What would you like to know?</h2>
+				</div>
+				<span class="dataset-label">sales.db <span aria-hidden="true">&#8226;</span> read only</span>
+			</div>
+			<form id="question-form">
+				<label class="sr-only" for="question">Your question</label>
+				<textarea id="question" name="question" rows="3" maxlength="300" placeholder="Which city had the highest revenue in 2024?" required></textarea>
+				<div class="form-row">
+					<span id="question-count">0 / 300</span>
+					<button type="submit" id="ask-button"><span>Ask question</span><span class="button-arrow" aria-hidden="true">&#8594;</span></button>
+				</div>
+			</form>
+			<p id="status" class="status" role="status"></p>
+		</section>
+
+		<section class="prompt-section" aria-labelledby="prompt-title">
+			<div class="section-label">
+				<p class="eyebrow" id="prompt-title">Start with an idea</p>
+				<span>Try a sample question</span>
+			</div>
+			<div class="prompt-grid">
+				<button class="prompt-chip" type="button" data-question="What is the total revenue by category?">Revenue by category <span aria-hidden="true">&#8599;</span></button>
+				<button class="prompt-chip" type="button" data-question="Which product sold the most units?">Top-selling product <span aria-hidden="true">&#8599;</span></button>
+				<button class="prompt-chip" type="button" data-question="What is the average order value by payment mode?">Average order value <span aria-hidden="true">&#8599;</span></button>
+			</div>
+		</section>
+
+		<div class="data-strip" aria-label="Dataset details">
+			<div><strong>20,000</strong><span>orders analyzed</span></div>
+			<div><strong>2024 - 2025</strong><span>date coverage</span></div>
+			<div><strong>12 cities</strong><span>across India</span></div>
+		</div>
+
+		<section id="result" class="result" hidden aria-live="polite">
+			<div class="answer-block">
+				<p class="eyebrow">Answer</p>
+				<p id="answer" class="answer"></p>
+			</div>
+			<div class="result-heading"><p class="eyebrow">Query result</p><span>Generated from your question</span></div>
+			<div id="table-wrap" class="table-wrap"></div>
+			<details class="sql-details">
+				<summary>View generated SQL <span aria-hidden="true">&#8599;</span></summary>
+				<pre id="sql"></pre>
+			</details>
+		</section>
+	</main>
+	<script src="/script.js"></script>
+</body>
+</html>

@@ -3,4 +3,3 @@ gunicorn
 python-dotenv
 flask-limiter
 requests
-google-genai

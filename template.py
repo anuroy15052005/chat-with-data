@@ -10,8 +10,6 @@ FILES = [
     "static/style.css",
     "static/script.js",
     "training/finetune.ipynb",
-    "hf_space/app.py",
-    "hf_space/requirements.txt",
 ]
 
 EMPTY_NOTEBOOK = '{"cells": [], "metadata": {}, "nbformat": 4, "nbformat_minor": 5}'

@@ -53,7 +53,7 @@ def simple_answer(columns, rows):
         if isinstance(value, float):
             value = f"{value:,.2f}"
         return f"{'₹' if money else ''}{value}"
-    return f"Found {len(rows)} row(s). See the table below."
+    return ""
 
 
 @app.get("/")

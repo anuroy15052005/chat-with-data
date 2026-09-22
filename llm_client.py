@@ -1,40 +1,43 @@
 import os
 
+import requests
 from dotenv import load_dotenv
-from google import genai
-from google.genai import errors, types
 
 load_dotenv()
 
-# Check which models show a free tier in Google AI Studio; change it in .env if needed.
-MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
+API_URL = "https://api.groq.com/openai/v1/chat/completions"
+# Change GROQ_MODEL in .env if Groq changes the available model list.
+MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
 
-SQL_SYSTEM = """You write SQLite queries for one table.
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SCHEMA = open(os.path.join(BASE_DIR, "schema.txt"), encoding="utf-8").read().strip()
 
-Table sales(order_id INTEGER, order_date TEXT 'YYYY-MM-DD', customer_city TEXT,
-category TEXT, product TEXT, quantity INTEGER, unit_price_inr INTEGER,
-discount_pct INTEGER, payment_mode TEXT, total_inr REAL)
+SQL_SYSTEM = f"""You write one SQLite query that answers the user's question about this table.
 
-customer_city is one of: Delhi, Mumbai, Bengaluru, Kolkata, Chennai, Hyderabad, Pune,
-Lucknow, Jaipur, Kanpur, Ahmedabad, Chandigarh.
-category is one of: Electronics, Clothing, Home & Kitchen, Groceries, Books.
-payment_mode is one of: UPI, Credit Card, Debit Card, Cash on Delivery, Net Banking.
-Dates run from 2024-01-01 to 2025-12-31.
+{SCHEMA}
 
 Rules:
-- Return ONLY one SELECT statement. No explanation, no markdown.
-- Revenue or sales means SUM(total_inr). All money is in Indian rupees.
+- Return ONLY the SQL. No explanation, no markdown.
+- category and product are different columns. A category contains several products (see the list above).
+- Revenue or sales means SUM(total_inr). Orders means COUNT(*). Units means SUM(quantity). All money is in Indian rupees.
 - Use strftime for dates, for example strftime('%Y-%m', order_date).
+- Use the exact spelling of city, category, product and payment values from the list above.
 - Add LIMIT 50 unless the question asks for a specific number of rows.
 - If the question cannot be answered from this table, return exactly: CANNOT_ANSWER
+
+Examples:
+Q: units of Headphones sold in Pune in 2024
+SQL: SELECT SUM(quantity) FROM sales WHERE product = 'Headphones' AND customer_city = 'Pune' AND strftime('%Y', order_date) = '2024';
+Q: which city has the highest revenue from Groceries?
+SQL: SELECT customer_city, SUM(total_inr) AS revenue FROM sales WHERE category = 'Groceries' GROUP BY customer_city ORDER BY revenue DESC LIMIT 1;
+Q: average order value by payment mode
+SQL: SELECT payment_mode, AVG(total_inr) AS avg_order_value FROM sales GROUP BY payment_mode ORDER BY avg_order_value DESC;
 """
 
 EXPLAIN_SYSTEM = (
     "You explain query results to a business user in 1 to 3 plain sentences. "
     "Use only the numbers given. Show money with the rupee sign."
 )
-
-_client = None
 
 
 class LLMError(Exception):
@@ -44,26 +47,37 @@ class LLMError(Exception):
 
 
 def _generate(prompt, system):
-    global _client
+    key = os.getenv("LLM_API_KEY")
+    if not key:
+        raise LLMError("LLM_API_KEY is missing. Add your Groq key to the .env file.")
     try:
-        if _client is None:
-            _client = genai.Client(api_key=os.getenv("LLM_API_KEY"))
-        response = _client.models.generate_content(
-            model=MODEL,
-            contents=prompt,
-            config=types.GenerateContentConfig(system_instruction=system, temperature=0),
+        r = requests.post(
+            API_URL,
+            headers={"Authorization": f"Bearer {key}"},
+            json={"model": MODEL, "temperature": 0, "max_tokens": 400,
+                  "messages": [{"role": "system", "content": system},
+                               {"role": "user", "content": prompt}]},
+            timeout=30,
         )
-    except errors.APIError as e:
-        if e.code == 429:
-            raise LLMError("The free Gemini quota is used up for now. Try again in a minute.", busy=True)
-        raise LLMError(f"The model service returned an error ({e.code}).")
-    except ValueError:
-        raise LLMError("LLM_API_KEY is missing. Add it to your .env file.")
-    return (response.text or "").strip()
+    except requests.RequestException:
+        raise LLMError("Could not reach the model service. Please try again.")
+
+    if r.status_code == 429:
+        raise LLMError("The free Groq limit is reached for now. Try again in a minute.", busy=True)
+    if r.status_code == 404:
+        raise LLMError(f"The Groq model '{MODEL}' was not found. Update GROQ_MODEL in .env.")
+    if r.status_code in (401, 403):
+        raise LLMError("The Groq API key was rejected. Check LLM_API_KEY.")
+    if not r.ok:
+        raise LLMError(f"The model service returned an error ({r.status_code}).")
+    try:
+        return (r.json()["choices"][0]["message"]["content"] or "").strip()
+    except (KeyError, IndexError, ValueError):
+        raise LLMError("The model service sent an unexpected reply.")
 
 
 def generate_sql(question, previous_sql=None, error=None):
-    prompt = f"Question: {question}"
+    prompt = f"Q: {question}"
     if error:
         prompt += (f"\n\nYour previous query failed.\nQuery: {previous_sql}\n"
                    f"Error: {error}\nWrite a corrected query.")
